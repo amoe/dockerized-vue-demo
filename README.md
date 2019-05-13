@@ -1,1 +1,1 @@
-# couchdb-docker-demo
+# dockerized-vue-demo
