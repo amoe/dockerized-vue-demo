@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    build: .
+    # The port on the host is 5000, while the port inside the container is 8080.
+    ports:
+      - "5000:8080"
+    # The local code lives under ./app; this will be seen under the container as
+    # /code.  The `./` prefix is mandatory.
+    volumes:
+      - ./app:/code
