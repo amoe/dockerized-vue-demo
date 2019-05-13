@@ -7,5 +7,10 @@ services:
       - "5000:8080"
     # The local code lives under ./app; this will be seen under the container as
     # /code.  The `./` prefix is mandatory.
+    # 
+    # We have to specifically mount in the /code/node_modules from the image
+    # later, because the app directory on the host does not itself contain
+    # the dependencies.
     volumes:
       - ./app:/code
+      - /code/node_modules
